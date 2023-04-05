@@ -1,2 +1,95 @@
-<h4>TESTE The News
-</h4>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Electro News </title>
+    <link rel="stylesheet" href="css/photon.css">
+</head>
+
+<body>
+    <div class="window">
+
+        <div class="window-content">
+            <div class="pane-group">
+
+
+                <!-- all news Categories starts here-->
+                <div class="pane-sm sidebar">
+                    <nav class="nav-group">
+                        <h5 class="nav-group-title">Categories</h5>
+                        <span class="nav-group-item active" id="business">
+                            <span style="color: black;" class="icon icon-briefcase"></span>
+                            Business
+                        </span>
+                        <span class="nav-group-item" id="sports">
+                            <span style="color: orange;" class="icon icon-qq"></span>
+                            Sports
+                        </span>
+                        <span class="nav-group-item" id="politics">
+                            <span style="color: blue;" class="icon icon-users"></span>
+                            Politics
+                        </span>
+                        <span class="nav-group-item" id="technology">
+                            <span style="color: purple;" class="icon icon-monitor"></span>
+                            Technology
+                        </span>
+                        <span class="nav-group-item" id="entertainment">
+                            <span style="color: green;" class="icon icon-play"></span>
+                            Entertainment
+                        </span>
+                        <span class="nav-group-item" id="health">
+                            <span style="color: red;" class="icon icon-plus-squared"></span>
+                            Health
+                        </span>
+                    </nav>
+                </div>
+                <!-- all news categories ends here -->
+
+
+                <!-- main content starts here-->
+                <div class="pane" style="display: flex; flex-flow: column; justify-content: space-between;">
+                    <ul class="list-group" id="news-list">
+
+
+                        <!-- search bar starts here-->
+                        <li class="list-group-header">
+                            <input class="form-control" type="text" value="" placeholder="Search for news">
+                        </li>
+                        <!-- search bar ends here -->
+
+
+                        <!-- single news item  starts here-->
+                        <li class="list-group-item">
+                            <img class="img-circle media-object pull-left" src="" width="50"
+                                height="50">
+                            <div class="media-body">
+                                <strong><a href="" >News Title Here</a></strong>
+                                <div>
+                                    <span class="">04st April 2023</span>
+                                    <span class="pull-right">Author: Rafael Rosa</span>
+                                </div>
+                                <p>Description about this news goes here</p>
+                            </div>
+                        </li>
+                        <!-- single news item ends here -->
+
+
+                    </ul>
+                    
+                    <div class="daily-notes" style="background-color: black; height: 20%;">
+                        <textarea id="daily-notes" name="daily"
+                        rows="5" cols="33">
+                        random text for daily notes and some news...
+                        </textarea>
+                    </div>
+                </div>
+                <!-- main content ends here -->
+
+
+            </div>
+        </div>
+        <footer class="toolbar toolbar-footer">test footer 123</footer>
+    </div>
+</body>
+
+</html>
