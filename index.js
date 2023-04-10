@@ -1,8 +1,12 @@
 const NewsAPI = require('newsapi')
 const $ = require('jquery')
 const newsapi = new NewsAPI('0e38e59576064d918a5e1dcb51498fa2')
+const electron = new require('electron')
+const {ipcRenderer} = electron
 let navItems = $('.nav-group-item')
 let articles = null;
+let textarea = document.querySelector('textarea')
+let defaultFontSize=20;
 
 getNews('business')
 
@@ -67,3 +71,29 @@ function search(input){
     let sortedArticles = articles.filter((item)=>item.title.toLowerCase().includes(query.toLowerCase()))
     showNews(sortedArticles)
 }
+
+function increaseFont(){
+    textarea.style.fontSize = `${++defaultFontSize}px`
+}
+
+function decreaseFont(){
+    textarea.style.fontSize = `${--defaultFontSize}px`
+}
+
+function saveText(){
+    let text = textarea.value
+    console.log(text)
+    ipcRenderer.send('save', text)
+}
+
+ipcRenderer.on('saved', (event, results)=>{
+    if(results=='success'){
+        console.log('note saved successfully')
+        textarea.style.backgroundColor = "#b2ff99"
+    }else{
+        console.log('error saving text')
+        textarea.style.backgroundColor = "#ff8989"
+    }
+
+    setTimeout(function(){textarea.style.backgroundColor = ""}, 1500)
+})

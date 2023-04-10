@@ -2,8 +2,17 @@
 <html>
 
 <head>
-    <title> Electro News </title>
+    <title> The News </title>
     <link rel="stylesheet" href="css/photon.css">
+    <style>
+        textarea{
+            width:100%; 
+            height:93%; 
+            resize: none; 
+            outline: none; 
+            font-size: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -17,17 +26,17 @@
                 <div class="pane-sm sidebar">
                     <nav class="nav-group">
                         <h5 class="nav-group-title">Categories</h5>
-                        <span class="nav-group-item active" id="business">
+                        <span class="nav-group-item active" id="politics">
+                            <span style="color: blue;" class="icon icon-users"></span>
+                            Politics
+                        </span>
+                        <span class="nav-group-item" id="business">
                             <span style="color: black;" class="icon icon-briefcase"></span>
                             Business
                         </span>
                         <span class="nav-group-item" id="sports">
                             <span style="color: orange;" class="icon icon-qq"></span>
                             Sports
-                        </span>
-                        <span class="nav-group-item" id="politics">
-                            <span style="color: blue;" class="icon icon-users"></span>
-                            Politics
                         </span>
                         <span class="nav-group-item" id="technology">
                             <span style="color: purple;" class="icon icon-monitor"></span>
@@ -50,25 +59,26 @@
                 <div class="pane" style="display: flex; flex-flow: column; justify-content: space-between;">
                     <ul class="list-group" id="news-list">
 
-
-                        <!-- search bar starts here-->
-                        
-                        <!-- search bar ends here -->
-
-
-                        <!-- single news item  starts here-->
-                        
-                        <!-- single news item ends here -->
-
-
                     </ul>
                     
-                    <div class="daily-notes" style="background-color: black; height: 20%;">
-                        <textarea id="daily-notes" name="daily"
-                        rows="5" cols="33">
-                        random text for daily notes and some news...
-                        </textarea>
+                    
+                </div>
+                <div>
+                    <div class="toolbar-actions">
+                        <div class="btn-group">
+                            <button class="btn btn-default" onclick="decreaseFont()">
+                                <span class="icon icon-minus"></span>
+                            </button>
+                            <button class="btn btn-default" onclick="increaseFont()">
+                                <span class="icon icon-plus"></span>
+                            </button>
+                        </div>
+                        <button class="btn btn-default pull-right" onclick="saveText()">
+                            <span class="icon icon-download icon-text"></span> Save
+                        </button>
                     </div>
+                    <textarea></textarea>
+
                 </div>
                 <!-- main content ends here -->
 
