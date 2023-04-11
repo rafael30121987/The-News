@@ -98,15 +98,14 @@ ipcRenderer.on('saved', (event, results)=>{
         textarea.style.backgroundColor = "#ff8989"
     }
 
-    setTimeout(function(){textarea.style.backgroundColor = ""}, 1500)
+    setTimeout(function(){textarea.style.backgroundColor = ""}, 500)
 })
 
-laut.getStations({by: 'letter',term: 'e'}).then((stations)=>{
+laut.getStations({by: 'live'}).then((stations)=>{
     if(stations){
         stations.forEach(station =>{
-            //console.log(station)
             let oneStation = `
-            <li class="list-group-item" ondblclick="playStream('${station.stream_url}')">
+            <li class="list-group-item" ondblclick="playStream('${station.stream_url}', this)">
                 <img class="img-circle media-object pull-left" src="${station.images.station_120x120}" width="32" height="32">
                 <div class="media-body">
                     <strong>${station.display_name}</strong>
@@ -121,7 +120,10 @@ laut.getStations({by: 'letter',term: 'e'}).then((stations)=>{
     console.log(e)
 })
 
-function playStream(url){
+function playStream(url, li){
+    let allStations =$('.list-group-item')
+    allStations.removeClass('active')
+    $(li).addClass('active')
     player.src = url
     player.load()
     player.play()
