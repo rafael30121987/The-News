@@ -9,6 +9,7 @@ let navItems = $('.nav-group-item')
 let articles = null;
 let textarea = document.querySelector('textarea')
 let defaultFontSize=20;
+let player = $('audio').get(0)
 
 getNews('business')
 
@@ -105,7 +106,7 @@ laut.getStations({by: 'letter',term: 'e'}).then((stations)=>{
         stations.forEach(station =>{
             //console.log(station)
             let oneStation = `
-            <li class="list-group-item" >
+            <li class="list-group-item" ondblclick="playStream('${station.stream_url}')">
                 <img class="img-circle media-object pull-left" src="${station.images.station_120x120}" width="32" height="32">
                 <div class="media-body">
                     <strong>${station.display_name}</strong>
@@ -119,3 +120,9 @@ laut.getStations({by: 'letter',term: 'e'}).then((stations)=>{
 }).catch((e)=>{
     console.log(e)
 })
+
+function playStream(url){
+    player.src = url
+    player.load()
+    player.play()
+}
