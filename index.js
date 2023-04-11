@@ -103,12 +103,13 @@ ipcRenderer.on('saved', (event, results)=>{
 laut.getStations({by: 'letter',term: 'e'}).then((stations)=>{
     if(stations){
         stations.forEach(station =>{
+            //console.log(station)
             let oneStation = `
             <li class="list-group-item" >
-                <img class="img-circle media-object pull-left" src="" width="32" height="32">
+                <img class="img-circle media-object pull-left" src="${station.images.station_120x120}" width="32" height="32">
                 <div class="media-body">
-                    <strong>Station Name</strong>
-                    <p>Station Description</p>
+                    <strong>${station.display_name}</strong>
+                    <p>${station.description}</p>
                 </div>
             </li>
             `
