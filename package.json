@@ -11,6 +11,7 @@
   "dependencies": {
     "electron": "^5.0.4",
     "jquery": "^3.4.1",
+    "lautfm": "^1.0.3",
     "newsapi": "^2.4.0"
   }
 }
