@@ -58,28 +58,32 @@
 
                 <!-- main content starts here-->
                 <div class="pane" >
+                    <!-- News list starts -->
                     <ul class="list-group" id="news-list">
                     </ul>
+                    <!-- News list ends -->
                 </div>
                 <div class="pane" >
+                    <!-- Radios list starts -->
                     <ul class="list-group" id="station-list">    
                     </ul>
+                    <!-- Radios list  ends -->
                 </div>
                 <div>
                     <div class="toolbar-actions">
                         <div class="btn-group">
-                            <button class="btn btn-default" onclick="decreaseFont()">
+                            <button class="btn btn-default" onclick="decreaseFont()"><!-- Decrease Font button -->
                                 <span class="icon icon-minus"></span>
                             </button>
-                            <button class="btn btn-default" onclick="increaseFont()">
+                            <button class="btn btn-default" onclick="increaseFont()"><!-- Increase Font button -->
                                 <span class="icon icon-plus"></span>
                             </button>
                         </div>
-                        <button class="btn btn-default pull-right" onclick="saveText()">
+                        <button class="btn btn-default pull-right" onclick="saveText()"><!-- Save text button -->
                             <span class="icon icon-download icon-text"></span> Save
                         </button>
                     </div>
-                    <textarea></textarea>
+                    <textarea></textarea> <!-- text area to write news information of the day -->
 
                 </div>
                 <!-- main content ends here -->
@@ -88,7 +92,7 @@
             </div>
         </div>
         <footer class="toolbar toolbar-footer">
-            <audio src="" controls style="height: 40px; width: 100%"></audio>
+            <audio src="" controls style="height: 40px; width: 100%"></audio> <!-- radio player controller -->
         </footer>
     </div>
     <script src="index.js"></script>
