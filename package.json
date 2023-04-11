@@ -4,12 +4,16 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "package-win": "electron-packager . The-News --platform=win32 --arch=all --icon=icons/icon.ico --out=release --asar --overwrite",
+    "package-mac": "electron-packager . The-News --platform=darwin --arch=x64 --icon=icons/icon.icns --out=release --asar --overwrite",
+    "package-linux": "electron-packager . The-News --platform=linux --arch=x64 --icon=icons/icon.png --out=release --asar --overwrite"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "electron": "^5.0.4",
+    "electron-packager": "^17.1.1",
     "jquery": "^3.4.1",
     "lautfm": "^1.0.3",
     "newsapi": "^2.4.0"

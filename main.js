@@ -11,8 +11,8 @@ app.on('ready', ()=>{
         webPreferences: {
             nodeIntegration: true
         },
-        width: 700,
-        height: 400
+        width: 1920,
+        height: 1080
     })
     win.loadFile('index.html')
 } )
