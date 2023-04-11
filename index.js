@@ -3,6 +3,8 @@ const $ = require('jquery')
 const newsapi = new NewsAPI('0e38e59576064d918a5e1dcb51498fa2')
 const electron = new require('electron')
 const {ipcRenderer} = electron
+const LautFm = require('lautfm')
+const laut = new LautFm()
 let navItems = $('.nav-group-item')
 let articles = null;
 let textarea = document.querySelector('textarea')
@@ -96,4 +98,23 @@ ipcRenderer.on('saved', (event, results)=>{
     }
 
     setTimeout(function(){textarea.style.backgroundColor = ""}, 1500)
+})
+
+laut.getStations({by: 'letter',term: 'e'}).then((stations)=>{
+    if(stations){
+        stations.forEach(station =>{
+            let oneStation = `
+            <li class="list-group-item" >
+                <img class="img-circle media-object pull-left" src="" width="32" height="32">
+                <div class="media-body">
+                    <strong>Station Name</strong>
+                    <p>Station Description</p>
+                </div>
+            </li>
+            `
+            $('#station-list').append(oneStation)
+        })
+    }
+}).catch((e)=>{
+    console.log(e)
 })
